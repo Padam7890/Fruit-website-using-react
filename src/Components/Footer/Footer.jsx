@@ -17,10 +17,7 @@ const Footer = () => {
             Fruit
           </a>
           <p className="footer__description">
-            Welcome to our online haven of freshness and wellness! At Fruitful
-            Journeys, we curate an exquisite collection of the finest fruits,
-            sourced directly from orchards that prioritize quality and
-            sustainability.
+            Eat Healthy
           </p>
         </div>
         <div className="footer__data grid">
@@ -38,25 +35,6 @@ const Footer = () => {
               )}
             </ul>
           </div>
-
-          <div>
-            <h3 className="footer__title">Explore Our Fruits</h3>
-            <ul className="footer__links">
-              {[
-                "Fresh Berries",
-                "Tropical Deligh",
-                "Orchard Classic",
-                "Exotic Varieties",
-              ].map((item) => (
-                <li>
-                  <a href={`#${item}`} className="footer__link">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <div>
             <h3 className="footer__title">Shop With Us</h3>
             <ul className="footer__links">

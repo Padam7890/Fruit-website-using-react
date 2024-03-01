@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../../assets/img/logo.png";
 import branch_2 from "../../assets/img/branch-2.png";
 import fruit_line_1 from "../../assets/img/fruit-line-1.png";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../../Hooks/Theme";
 const Header = () => {
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   const [showMenu, setShowMenu] = useState();
   const [isHeaderShadowed, setIsHeaderShadowed] = useState(false);
   const [isScrollUp, setisScrollUp] = useState(false);
-  const [activeLink, setActiveLink] = useState('');
 
 
 
@@ -62,7 +65,7 @@ const Header = () => {
               </NavLink> */}
               <li to={'#home'} className="nav__item">
                 
-               <a className="nav__link active-link"  href="#home">Home</a> 
+               <a className="nav__link "  href="#home">Home</a> 
               </li>
               <li className="nav__item">
                 <a className="nav__link" href="#about">
@@ -94,10 +97,26 @@ const Header = () => {
             <img src={fruit_line_1} alt="" className="nav__img-2" />
           </div>
 
-          {/* Toogle Button */}
+          <div className="nav__buttons">
+            {/* theme Button */}
+            <i onClick={()=>toggleTheme()} 
+           
+            className= {
+              theme === 'light-theme'?
+              'ri-moon-line  ' :
+              'ri-sun-line text-light '
+            }
+            id="theme-button">
+
+            </i>
+              {/* Toogle Button */}
           <div onClick={MenuShowHide} className="nav__toggle" id="nav-toggle">
             <i className="ri-menu-4-line"></i>
           </div>
+
+          </div>
+
+        
         </nav>
             {/* Scroll up */}
       <a href="" className={`scrollup ${isScrollUp ? 'show-scroll':''}`} id="scroll-up">
