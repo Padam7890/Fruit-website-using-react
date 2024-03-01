@@ -54,7 +54,7 @@ const Popular = () => {
   ];
 
   return (
-    <section>
+    <section className="popular" id="popular">
       <h2 className="section__title">Popular</h2>
       <div className="popular__container container grid">
         {fruits.map((fruit) => (

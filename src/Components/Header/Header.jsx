@@ -3,15 +3,27 @@ import "./Header.css";
 import logo from "../../assets/img/logo.png";
 import branch_2 from "../../assets/img/branch-2.png";
 import fruit_line_1 from "../../assets/img/fruit-line-1.png";
+import { NavLink } from "react-router-dom";
 const Header = () => {
   const [showMenu, setShowMenu] = useState();
   const [isHeaderShadowed, setIsHeaderShadowed] = useState(false);
+  const [isScrollUp, setisScrollUp] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+
+
   const scrollHeader = () => {
     setIsHeaderShadowed(window.scrollY >= 50);
   };
 
+  const scrollUp = () =>{
+    setisScrollUp(window.scrollY >= 350);
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', scrollHeader);
+    window.addEventListener('scroll', scrollUp);
+    
     return () => {
       window.removeEventListener('scroll', scrollHeader);
     };
@@ -20,6 +32,9 @@ const Header = () => {
   function MenuShowHide() {
     setShowMenu(!showMenu);
   }
+
+
+
 
   return (
     <>
@@ -34,26 +49,38 @@ const Header = () => {
             id="nav-menu"
           >
             <ul className="nav__list">
-              <li className="nav__item">
-                <a className="nav__link">Home</a>
+            {/* <NavLink
+                className={({ isActive }) => {
+                  return isActive ? "text-green-300" : "";
+                }}
+                to="/"
+              >
+                <div className="inline-flex items-center gap-3">
+                  <RxDashboard />
+                  Dashboard
+                </div>
+              </NavLink> */}
+              <li to={'#home'} className="nav__item">
+                
+               <a className="nav__link active-link"  href="#home">Home</a> 
               </li>
               <li className="nav__item">
-                <a className="nav__link" href="">
+                <a className="nav__link" href="#about">
                   About
                 </a>
               </li>
               <li className="nav__item">
-                <a className="nav__link" href="">
+                <a className="nav__link" href="#footer">
                   Contact
                 </a>
               </li>
               <li className="nav__item">
-                <a className="nav__link" href="">
+                <a className="nav__link" href="#popular">
                   Popular
                 </a>
               </li>
               <li className="nav__item">
-                <a className="nav__link" href="">
+                <a className="nav__link" href="#join">
                   Join us
                 </a>
               </li>
@@ -72,6 +99,10 @@ const Header = () => {
             <i className="ri-menu-4-line"></i>
           </div>
         </nav>
+            {/* Scroll up */}
+      <a href="" className={`scrollup ${isScrollUp ? 'show-scroll':''}`} id="scroll-up">
+        <i className="ri-arrow-up-s-line"></i>
+      </a>
       </header>
     </>
   );
