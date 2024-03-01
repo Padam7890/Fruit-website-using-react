@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../../assets/img/logo.png";
 import branch_2 from "../../assets/img/branch-2.png";
 import fruit_line_1 from "../../assets/img/fruit-line-1.png";
-
 const Header = () => {
+  const [showMenu, setShowMenu] = useState();
+  const [isHeaderShadowed, setIsHeaderShadowed] = useState(false);
+  const scrollHeader = () => {
+    setIsHeaderShadowed(window.scrollY >= 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHeader);
+    return () => {
+      window.removeEventListener('scroll', scrollHeader);
+    };
+  }, []); 
+
+  function MenuShowHide() {
+    setShowMenu(!showMenu);
+  }
+
   return (
     <>
-      <header className="header" id="header">
+      <header className={`header ${isHeaderShadowed ? 'shadow-header': ''}`} id="header">
         <nav className="nav container">
           <a className="nav__logo" href="">
             <img className="" src={logo} alt="logo" />
             Fruit
           </a>
-          <div className="nav__menu" id="nav-menu">
+          <div
+            className={`nav__menu ${showMenu ? "show-menu" : ""}`}
+            id="nav-menu"
+          >
             <ul className="nav__list">
               <li className="nav__item">
-                <a className="nav__link" href="">
-                  Home
-                </a>
+                <a className="nav__link">Home</a>
               </li>
               <li className="nav__item">
                 <a className="nav__link" href="">
@@ -42,7 +59,7 @@ const Header = () => {
               </li>
             </ul>
             {/* close button */}
-            <div className="nav__close" id="nav-close">
+            <div onClick={MenuShowHide} className="nav__close" id="nav-close">
               <i className="ri-close-line"></i>
             </div>
 
@@ -51,12 +68,9 @@ const Header = () => {
           </div>
 
           {/* Toogle Button */}
-          <div className="nav__toggle" id="nav-toggle">
+          <div onClick={MenuShowHide} className="nav__toggle" id="nav-toggle">
             <i className="ri-menu-4-line"></i>
           </div>
-
-
-
         </nav>
       </header>
     </>
