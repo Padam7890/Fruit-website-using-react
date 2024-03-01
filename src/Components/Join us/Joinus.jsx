@@ -1,6 +1,10 @@
 import React from "react";
 import "./Joinus.css";
 import Join_bg from "../../assets/img/join-bg.png";
+import leaf from "../../assets/img/leaf.png";
+
+
+
 
 const Joinus = () => {
   return (
@@ -30,6 +34,8 @@ const Joinus = () => {
           </form>
           <img src={Join_bg} alt="image" className="join__bg" />
         </div>
+        <img src={leaf} alt="" className="join__leaf-1" />
+        <img src={leaf} alt="" className="join__leaf-2" />
       </div>
     </section>
   );
