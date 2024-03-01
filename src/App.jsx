@@ -8,6 +8,7 @@ import Enjoy from "./Components/Enjoy/Enjoy";
 import About from "./Components/About Us/About";
 import Popular from "./Components/Popular/Popular";
 import Joinus from "./Components/Join us/Joinus";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <About/>
         <Popular/>
         <Joinus/>
+        <Footer/>
       </main>
     </>
   );
