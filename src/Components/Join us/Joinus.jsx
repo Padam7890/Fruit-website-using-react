@@ -2,6 +2,7 @@ import React from "react";
 import "./Joinus.css";
 import Join_bg from "../../assets/img/join-bg.png";
 import leaf from "../../assets/img/leaf.png";
+import Button from "../ReusableComponents/Buttons.jsx/Button";
 
 
 
@@ -28,9 +29,9 @@ const Joinus = () => {
               placeholder="Enter Your email"
               className="join__input"
             />
-            <button type="submit" className="join__button button">
+            <Button type="submit" className="join__button">
               Join Us
-            </button>
+            </Button>
           </form>
           <img src={Join_bg} alt="image" className="join__bg" />
         </div>

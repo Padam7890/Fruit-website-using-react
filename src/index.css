@@ -272,6 +272,10 @@ body {
   .container{
     margin-inline: 1rem;
   }
+  
+  .popular__container{
+    row-gap: 5rem;
+  }
   .home__title{
     font-size: 2.5rem;
   }
@@ -311,6 +315,10 @@ body {
   display: grid;
   grid-template-columns: 370px;
   justify-content: center;
+}
+
+.popular__container{
+  row-gap: 5rem;
 }
 .join__description{
    width: 350px;
@@ -355,6 +363,11 @@ body {
     .popular__container
     {
        grid-template-columns: repeat(2, 250px);
+
+    }
+
+    .popular__container{
+      row-gap: 5rem;
     }
 
     .about__img{

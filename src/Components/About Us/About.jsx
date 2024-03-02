@@ -3,6 +3,7 @@ import fruit_line_1 from "../../assets/img/fruit-line-1.png";
 import about_fruit from "../../assets/img/about-fruits.png";
 import about_branch from "../../assets/img/branch-1.png";
 import './About.css';
+import Button from "../ReusableComponents/Buttons.jsx/Button";
 
 
 const About = () => {
@@ -21,9 +22,9 @@ const About = () => {
               berries bursting with antioxidants to juicy tropical delights
               loaded with vitamins, our selection is a feast for your taste buds
             </p>
-             <a href="" className="button">
+             <Button className="button">
                 Know More about
-             </a>
+             </Button>
              <img src={fruit_line_1} alt="image" className="about__fruit" />
           </div>
           <img src={about_fruit} alt="image" className="about__img" />

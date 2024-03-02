@@ -6,6 +6,7 @@ import popular_4 from "../../assets/img/popular-4.png";
 import popular_5 from "../../assets/img/popular-5.png";
 import popular_6 from "../../assets/img/popular-6.png";
 import './Popular.css'
+import Button from "../ReusableComponents/Buttons.jsx/Button";
 
 const Popular = () => {
   const fruits = [
@@ -64,9 +65,9 @@ const Popular = () => {
           <h3 className="popular__title"> {fruit.name}</h3>
           <span className="popular__subtitle">{fruit.subtitle}</span>
           <h3 className="popular__price">Rs. {fruit.price}</h3>
-          <button className="popular__button button">
+          <Button className="popular__button">
             <i className="ri-add-line"></i>
-          </button>
+          </Button>
         </article>
         ))}
       </div>
