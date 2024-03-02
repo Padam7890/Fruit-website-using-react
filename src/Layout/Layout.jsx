@@ -7,7 +7,7 @@ import Popular from "../Components/Popular/Popular";
 import Joinus from "../Components/Join us/Joinus";
 import Footer from "../Components/Footer/Footer";
 import { ThemeContext } from "../Hooks/Theme";
-import ScrollReveal from 'scrollreveal'
+import Slide from "../Utility/Slide"
 
 
 
@@ -21,13 +21,25 @@ const Layout = () => {
      className={theme}>
       <Header />
       <main className="main">
+        <Slide>
         <Home />
+        </Slide>
+        <Slide>
         <Enjoy />
+        </Slide>
+        <Slide>
         <About />
+        </Slide>
+        <Slide>
         <Popular />
+        </Slide>
+        <Slide>
         <Joinus />
+        </Slide>
       </main>
-      <Footer />
+      <Slide>
+        <Footer />
+      </Slide>
     </div>
   );
 };
