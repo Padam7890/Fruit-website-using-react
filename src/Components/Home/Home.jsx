@@ -7,7 +7,7 @@ import home_branch from "../../assets/img/branch-2.png";
 const Home = () => {
   return (
     <section className="home section" id="home">
-      <div className="home__container container container grid">
+      <div className="home__container container  grid">
         <div className="home__data">
           <h1 className="home__title">
             Enjoy the <br />

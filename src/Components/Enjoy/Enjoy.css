@@ -28,8 +28,6 @@
     z-index: -1;
     transform: skewY(4deg);
     transition: background-color .4s;
-
-
 }
 .enjoy__title{
     font-size: var(--h1-font-size);
